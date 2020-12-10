@@ -235,15 +235,15 @@ test_loader61 = DataLoader(data_test61, batch_size=batch_size2, shuffle=False)
 t2 = default_timer()
 
 print('preprocessing finished, time used:', t2-t1)
-device = torch.device('cuda')
+device = torch.device('cpu')
 
-model = KernelNN(width,ker_width,depth,edge_features,node_features).cuda()
+model = KernelNN(width,ker_width,depth,edge_features,node_features)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, weight_decay=5e-4)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=scheduler_step, gamma=scheduler_gamma)
 
 myloss = LpLoss(size_average=False)
-u_normalizer.cuda()
+u_normalizer
 
 model.train()
 ttrain = np.zeros((epochs, ))

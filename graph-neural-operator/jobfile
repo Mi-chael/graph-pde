@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#!/bin/bash
+#SBATCH -o /home/dick/Projects/graph-pde/jobs/meta/job.out
+#SBATCH -e /home/dick/Projects/graph-pde/jobs/meta/job.err
+#SBATCH --job-name midi_snakejob
+#SBATCH --mem=2000
+#SBATCH --time=72:00:00
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 1
+#SBATCH --nodes 1
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=mi.dick@fz-juelich.de
+
+source activate graph-pde
+cd /home/dick/Projects/graph-pde/graph-neural-operator/
+python UAI!_full_resolution.py
+
