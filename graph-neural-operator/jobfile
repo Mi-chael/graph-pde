@@ -3,11 +3,12 @@
 #SBATCH -o /users/dick/Projects/graph-pde/graph-neural-operator/jobs/meta/job.out
 #SBATCH -e /users/dick/Projects/graph-pde/graph-neural-operator/jobs/meta/job.err
 #SBATCH --job-name midi_testjob
-#SBATCH --mem=2000
-#SBATCH --time=72:00:00
+#SBATCH --mem=100000
+#SBATCH --time=300:00:00
 #SBATCH --ntasks 1
-#SBATCH --cpus-per-task 1
+#SBATCH --cpus-per-task 48
 #SBATCH --nodes 1
+#SBATCH --partition='blaustein'
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=mi.dick@fz-juelich.de
 
